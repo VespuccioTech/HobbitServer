@@ -86,10 +86,15 @@ public class GameEngine {
 		final int targetX = candidateX;
 		final int targetY = candidateY;
 
-		boolean collision = obstacles.stream().anyMatch(o -> o.getX() == targetX && o.getY() == targetY);
+		boolean collisionObstacle = obstacles.stream()
+				.anyMatch(o -> o.getX() == targetX && o.getY() == targetY);
 
-		if (collision)
-			return;
+		if (collisionObstacle) return;
+
+		boolean collisionPlayer = sessions.values().stream()
+				.anyMatch(otherPlayer -> otherPlayer.getX() == targetX && otherPlayer.getY() == targetY);
+
+		if (collisionPlayer) return;
 
 		p.setX(targetX);
 		p.setY(targetY);

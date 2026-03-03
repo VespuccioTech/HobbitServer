@@ -30,5 +30,4 @@ bin/
 .classpath
 
 # Other
-cat-src-files.sh
 src.txt

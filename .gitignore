@@ -28,3 +28,7 @@ bin/
 .settings/
 .project
 .classpath
+
+# Other
+cat-src-files.sh
+src.txt
